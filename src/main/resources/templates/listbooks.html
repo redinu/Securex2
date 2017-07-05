@@ -29,8 +29,8 @@
             <td></td>
             <td th:text="${row.title}"></td>
             <td th:text="${row.author}"></td>
-            <td><a href="#" th:href="@{/books/edit/{bookid} (bookid = ${row.id})}">Update</a> -
-                <a href="#" th:href="@{/books/delete/{bookid} (bookid = ${row.id})}">Delete</a>
+            <td><a sec:Authorize="has.Role('ADMIN')" th:href="@{/books/edit/{bookid} (bookid = ${row.id})}">Update</a> -
+                <a sec:Authorize="has.Role('ADMIN')" th:href="@{/books/delete/{bookid} (bookid = ${row.id})}">Delete</a>
             </td>
         </tr>
     </table>
